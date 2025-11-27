@@ -70,7 +70,7 @@ jobs:
           ls -lah release/
 
       - name: 🚀 Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: release/*
           generate_release_notes: true

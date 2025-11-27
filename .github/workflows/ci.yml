@@ -20,10 +20,10 @@ jobs:
       - name: 🐹 Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.25'
+          go-version: "1.25"
 
       - name: 🔍 Run golangci-lint
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@v9.1.0
         with:
           version: latest
 
@@ -37,7 +37,7 @@ jobs:
       - name: 🐹 Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.25'
+          go-version: "1.25"
 
       - name: 📦 Download dependencies
         run: go mod download
@@ -46,7 +46,7 @@ jobs:
         run: go test -v -race -coverprofile=coverage.out ./...
 
       - name: 📊 Upload coverage
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           file: ./coverage.out
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -76,7 +76,7 @@ jobs:
       - name: 🐹 Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.25'
+          go-version: "1.25"
 
       - name: 🔨 Build binary
         env:
