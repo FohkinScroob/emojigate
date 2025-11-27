@@ -6,13 +6,10 @@ if ! command -v emojigate &> /dev/null; then
     # Install emojigate if not found
     SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-    # Try to get version from git tag in the pre-commit repo
+    # Try to get version from .version file
     VERSION="latest"
-    if [ -d "$SCRIPT_DIR/../.git" ]; then
-        GIT_TAG=$(cd "$SCRIPT_DIR/.." && git describe --tags --exact-match 2>/dev/null || echo "")
-        if [ -n "$GIT_TAG" ]; then
-            VERSION="${GIT_TAG#v}"
-        fi
+    if [ -f "$SCRIPT_DIR/../.version" ]; then
+        VERSION=$(cat "$SCRIPT_DIR/../.version")
     fi
 
     "$SCRIPT_DIR/install.sh" "$VERSION" "$HOME/.local/bin"
