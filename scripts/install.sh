@@ -33,7 +33,6 @@ case "$OS" in
         ;;
     mingw*|msys*|cygwin*)
         OS="windows"
-        BINARY_NAME="emojigate.exe"
         ;;
     *)
         echo "Unsupported OS: $OS"
@@ -54,9 +53,10 @@ fi
 VERSION=${VERSION#v}
 
 # Build download URL
-DOWNLOAD_URL="https://github.com/$REPO/releases/download/v${VERSION}/${BINARY_NAME}-${OS}-${ARCH}"
 if [ "$OS" = "windows" ]; then
-    DOWNLOAD_URL="${DOWNLOAD_URL}.exe"
+    DOWNLOAD_URL="https://github.com/$REPO/releases/download/v${VERSION}/${BINARY_NAME}-${OS}-${ARCH}.exe"
+else
+    DOWNLOAD_URL="https://github.com/$REPO/releases/download/v${VERSION}/${BINARY_NAME}-${OS}-${ARCH}"
 fi
 
 echo "Downloading emojigate v${VERSION} for ${OS}/${ARCH}..."
@@ -76,11 +76,16 @@ else
     exit 1
 fi
 
-# Move to install directory
-mv "$TEMP_FILE" "$INSTALL_DIR/$BINARY_NAME"
-chmod +x "$INSTALL_DIR/$BINARY_NAME"
-
-echo "✅ Successfully installed emojigate to $INSTALL_DIR/$BINARY_NAME"
+# Move to install directory and set correct name
+if [ "$OS" = "windows" ]; then
+    mv "$TEMP_FILE" "$INSTALL_DIR/${BINARY_NAME}.exe"
+    chmod +x "$INSTALL_DIR/${BINARY_NAME}.exe"
+    echo "✅ Successfully installed emojigate to $INSTALL_DIR/${BINARY_NAME}.exe"
+else
+    mv "$TEMP_FILE" "$INSTALL_DIR/$BINARY_NAME"
+    chmod +x "$INSTALL_DIR/$BINARY_NAME"
+    echo "✅ Successfully installed emojigate to $INSTALL_DIR/$BINARY_NAME"
+fi
 echo ""
 echo "Make sure $INSTALL_DIR is in your PATH:"
 echo "  export PATH=\"\$PATH:$INSTALL_DIR\""
