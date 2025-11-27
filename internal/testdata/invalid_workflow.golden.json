@@ -1,0 +1,37 @@
+[
+  {
+    "Type": "Workflow",
+    "Identifier": "Invalid Workflow",
+    "Msg": "Name must start with an emoji. Example: '🚀 Deploy'"
+  },
+  {
+    "Type": "Job",
+    "Identifier": "build",
+    "Msg": "Name must start with an emoji. Example: '🚀 Deploy'"
+  },
+  {
+    "Type": "Step",
+    "Identifier": "Checkout code",
+    "Msg": "Name must start with an emoji. Example: '🚀 Deploy'"
+  },
+  {
+    "Type": "Step",
+    "Identifier": "Setup Go",
+    "Msg": "Name must start with an emoji. Example: '🚀 Deploy'"
+  },
+  {
+    "Type": "Job",
+    "Identifier": "test",
+    "Msg": "Name must start with an emoji. Example: '🚀 Deploy'"
+  },
+  {
+    "Type": "Step",
+    "Identifier": "Checkout code",
+    "Msg": "Name must start with an emoji. Example: '🚀 Deploy'"
+  },
+  {
+    "Type": "Step",
+    "Identifier": "Run tests",
+    "Msg": "Name must start with an emoji. Example: '🚀 Deploy'"
+  }
+]

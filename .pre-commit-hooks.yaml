@@ -1,0 +1,15 @@
+- id: emojigate
+  name: Lint GitHub Actions for emoji usage
+  description: Ensures all workflow, job, and step names start with an emoji
+  entry: emojigate lint
+  language: golang
+  files: ^\.github/workflows/.*\.ya?ml$
+  pass_filenames: true
+
+- id: emojigate-binary
+  name: Lint GitHub Actions for emoji usage (auto-download binary)
+  description: Automatically downloads and uses pre-built binary (no Go required)
+  entry: scripts/pre-commit-wrapper.sh
+  language: script
+  files: ^\.github/workflows/.*\.ya?ml$
+  pass_filenames: true

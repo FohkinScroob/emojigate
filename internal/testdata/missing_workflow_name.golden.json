@@ -1,0 +1,7 @@
+[
+  {
+    "Type": "Workflow",
+    "Identifier": "workflow",
+    "Msg": "Missing display name. Please add a 'name:' field starting with an emoji."
+  }
+]

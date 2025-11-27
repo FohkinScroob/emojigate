@@ -1,0 +1,52 @@
+name: 🎨 Mixed Emoji Types Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    name: 🔨 Build with Hammer
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Inbox Tray
+        uses: actions/checkout@v3
+
+      - name: ✅ Check Mark Button
+        run: echo "Testing Dingbats range"
+
+      - name: ☀️ Sun Symbol
+        run: echo "Testing Misc Symbols range"
+
+      - name: 🚀 Rocket
+        run: echo "Testing Transport range"
+
+  test:
+    name: ⭐ Star Symbol
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🐹 Hamster
+        uses: actions/checkout@v3
+
+      - name: ✈️ Airplane
+        run: echo "Another Dingbats emoji"
+
+      - name: 🌍 Earth Globe
+        run: echo "Testing Pictographs range"
+
+      - name: 🎉 Party Popper
+        run: echo "Testing Activities range"
+
+  deploy:
+    name: 🚁 Helicopter
+    runs-on: ubuntu-latest
+    steps:
+      - name: ☂️ Umbrella
+        run: echo "Weather symbol"
+
+      - name: ⚡ Lightning
+        run: echo "Another misc symbol"
+
+      - name: 🔥 Fire
+        run: echo "Testing various ranges"
