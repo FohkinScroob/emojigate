@@ -46,11 +46,12 @@ func TestLintWorkflows(t *testing.T) {
 				jobViolations := 0
 				stepViolations := 0
 				for _, v := range violations {
-					if v.Type == Workflow {
+					switch v.Type {
+					case Workflow:
 						workflowViolations++
-					} else if v.Type == Job {
+					case Job:
 						jobViolations++
-					} else if v.Type == Step {
+					case Step:
 						stepViolations++
 					}
 				}
