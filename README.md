@@ -16,7 +16,17 @@ Emojigate lints your GitHub Actions YAML files to ensure every workflow, job, an
 
 ### Download Binary
 
-Download the latest release from [GitHub Releases](https://github.com/FohkinScroob/emojigate/releases) and add it to your PATH.
+Download the latest release from [GitHub Releases](https://github.com/FohkinScroob/emojigate/releases):
+
+1. Download the binary for your platform (e.g., `emojigate-linux-amd64`)
+2. Rename it to `emojigate` (or `emojigate.exe` on Windows)
+3. Make it executable: `chmod +x emojigate` (Linux/macOS)
+4. Move it to a directory in your PATH (e.g., `/usr/local/bin` or `~/.local/bin`)
+
+**Quick install script:**
+```bash
+curl -sSL https://raw.githubusercontent.com/FohkinScroob/emojigate/main/scripts/install.sh | bash
+```
 
 ### Build from Source
 
